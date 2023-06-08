@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color:#555;
+    width:100vw;
+    height:100vh;
+}
+
+
+#chat-wrapper, #status-wrapper, #call-wrapper{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top: 0;
+}
+
+#chat-wrapper{
+    background-color: #EBE5DE;
+    background-image: url("https://w0.peakpx.com/wallpaper/154/372/HD-wallpaper-telegram-background-whatsapp-creative-android-pattern-texture-abstract.jpg");
+    background-size: cover;
+}
+
+
+#chat-wrapper .top, #status-wrapper .top{
+    width:100vw;
+    height:60px;
+    background-color:#35897E;
+    position:fixed;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0 6px 0 8px;
+}
+
+#chat-wrapper .top .top-left, #chat-wrapper .top .top-right, #status-wrapper .top .top-left, #status-wrapper .top .top-right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-wrapper .top .top-left img, #status-wrapper .top .top-left img{
+    margin-right: 10px;
+}
+
+#chat-wrapper .top .top-left .icon-back, #status-wrapper .top .top-left .icon-back{
+    margin-right: 4px;
+}
+
+#chat-wrapper .top .top-right *, #status-wrapper .top .top-right *{
+    margin-left: 20px;
+    font-size: 23px;
+}
+
+#chat-wrapper .top .top-right span:first-child{
+    margin-left: 0;
+}
+
+#chat-wrapper .top .top-left img, #status-wrapper .top .top-left img{
+    width: 42px;
+    height: 42px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+#chat-wrapper .top span, #status-wrapper .top span{
+    color: white;
+    font-size: 23px;
+}
+
+#chat-wrapper .top .contact .contact-name, #status-wrapper .top .contact .contact-name{
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+#chat-wrapper .top .contact .last-seen, #status-wrapper .top .contact .last-seen{
+    color: white;
+    font-size: 11px;
+    transform: translateY(1px);
+}
+
+/*---------------------------------*/
+
+#chat-wrapper footer{
+    width: 100vw;
+    height:60px;
+    position: fixed;
+    bottom: 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0 4px;
+    z-index: 2;
+    background-image: url("https://w0.peakpx.com/wallpaper/154/372/HD-wallpaper-telegram-background-whatsapp-creative-android-pattern-texture-abstract.jpg");
+}
+
+#chat-wrapper #textfield{
+    height:45px;
+    width: calc(100vw - 58px);
+    background-color: white;
+    border-radius:25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5px;
+}
+
+#chat-wrapper #textfield .icon-attach, #chat-wrapper #textfield .icon-payment, #textfield .icon-camera{
+    margin-left: 5px;
+}
+
+#chat-wrapper #textfield input[type="text"]
+{
+    width: calc(100% - 155px);
+    height:100%;
+    border:none;
+    background-color:transparent;
+    font-size: 1.1rem;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#chat-wrapper #textfield input[type="text"]:focus{
+    outline:none;
+    caret-color: var(--green-t);
+}
+
+#chat-wrapper #textfield span{
+    width: 35px;
+    height:35px;
+    border-radius:50%;
+    display:inline-flex;
+    color:#7c7c7c;
+    font-size:1.475rem;
+    align-items:center;
+    justify-content:center;
+}
+
+#chat-wrapper #textfield .material-icons-round:hover{
+    background-color:rgba(50,50,50,.25);
+}
+
+#chat-wrapper #textfield .icon-attach{
+    transform:rotate(-40deg);
+}
+
+#chat-wrapper #mic-holder{
+    width:45px;
+    height:45px;
+    background-color:rgb(0,168,132);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white; 
+}
+
+/* ---------------------------- */
+
+#chat-wrapper #chat-holder{
+    overflow:scroll;   
+    padding-top: 5px;
+    padding-bottom: 60px;
+    position: relative;
+    top: 60px;
+    height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
+    width: 100vw;
+}
+
+#chat-wrapper #chat-holder::-webkit-scrollbar{
+    display: none;
+}
+
+#chat-wrapper #chat-holder .encryption-msg p{
+    background-color: rgb(255, 237, 213);
+    text-align: center;
+    margin: 10px 25px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    color:rgb(54, 60, 60);
+    margin-bottom: 10px;
+}
+
+#chat-wrapper #chat-holder .message-date{
+    text-align: center;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 5.5px 10px;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #636363;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+    white-space: nowrap;
+}
+/* --------------------------- */
+
+#chat-wrapper .msg{
+    position: relative;
+    max-width: 80vw;
+    min-height: 60px;
+    width: max-content;
+    min-width: 105px;
+    padding: 8px 12px;
+    padding-bottom: 28px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    line-height: 150%;
+    color: black;
+}
+
+#chat-wrapper .msg.right{
+    margin-left: auto;
+    margin-right: 10px;
+    border-top-right-radius: 0;
+    background-color: #E0F6CA;
+}
+
+#chat-wrapper .msg.right .msg-content{
+    /* text-align: right; */
+    display: block;
+}
+
+#chat-wrapper .msg.left{
+    margin-left: 10px;
+    border-top-left-radius: 0;
+    background-color: white;
+}
+
+#chat-wrapper .first-msg{
+    margin-bottom: 10px;
+}
+
+#chat-wrapper .msg.left .icon-seen{
+    display: none;
+}
+
+#chat-wrapper .time-seen{
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    right: 8px;
+    bottom: 2px;
+    white-space: nowrap;
+}
+
+#chat-wrapper .time{
+    color: rgb(97, 97, 97);
+}
+
+#chat-wrapper .icon-seen{
+    font-size: 18px;
+    position: relative;
+    transform: translateY(4px);
+    color: #4FB6EC;
+}
+
+
+/* --------style for status------------- */
+
+#status-wrapper{
+    background-color: black;
+    position: relative;
+}
+
+#status-wrapper #statusProgress {
+    width: 100%;
+    background-color: grey;
+  }
+  
+#status-wrapper #statusBar {
+    width: 1%;
+    height: 3px;
+    background-color: white;
+  }
+
+#status-wrapper .top{
+    background-color: transparent;
+    height: 65px;
+    z-index: 1;
+}
+
+#status-wrapper .top .name{
+    color: white;
+}
+
+#status-wrapper .status-img{
+    display: block;
+    width: 100vw;
+    height: 100vw;
+    max-height: 100vh;
+    max-width: 80vh;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#status-wrapper .reply{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#status-wrapper .reply *{
+    color: white;
+}
+
+/* ---------style for call----------*/
+
+#call-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #091219;
+    background-image: url("https://w0.peakpx.com/wallpaper/580/650/HD-wallpaper-whatsapp-bg-dark-background.jpg");
+    background-size: cover;
+}
+
+#call-wrapper .encryption-msg{
+    color: #838c92;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+#call-wrapper img{
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#call-wrapper h2{
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#call-wrapper p{
+    color: #838c92;
+}
+
+#call-wrapper .bottom{
+    width: 100vw;
+    background-color: rgb(119, 122, 122);
+    /* height: 100px; */
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #273443;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 55px 0;
+}
+
+#call-wrapper .bottom *{
+    color: white;
+    font-size: 32px;
+    display: inline-block;
+}
+
+#call-wrapper .bottom .icon-expand{
+    position: absolute;
+    top: 3px;
+    color: #838c92;
+}
+
+#call-wrapper .bottom .call-icons-holder{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#call-wrapper .bottom .call-icons-holder span{
+    font-size: 27px;
+}
+
+#call-wrapper .bottom .call-icons-holder .icon-video-call{
+    color: #838c92;
+}
+
+#call-wrapper .bottom .call-icons-holder .icon-call-end{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#wrapper{
+    /* display: none; */
+}
+
+#chat-wrapper{
+    display: none;
+}
+
+#status-wrapper{
+    display: none;
+}
+
+#call-wrapper{
+    display: none;
+}
+
+.icon-back, .icon-call-end, .icon-mic{
+    cursor: pointer;
+}
+
